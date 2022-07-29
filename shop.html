@@ -1,0 +1,436 @@
+﻿<!DOCTYPE html>
+<?
+require_once("login.html");
+?>
+<html class="no-js">
+
+<head>
+    <!-- Basic Page Needs
+        ================================================== -->
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <title>환영합니다. Meaningcle 입니다.</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <!-- Mobile Specific Metas
+        ================================================== -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Template CSS Files
+        ================================================== -->
+    <!-- Twitter Bootstrs CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Ionicons Fonts Css -->
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <!-- animate css -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- Hero area slider css-->
+    <link rel="stylesheet" href="css/slider.css">
+    <!-- owl craousel css -->
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.theme.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.css">
+    <!-- template main css file -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Template Javascript Files
+        ================================================== -->
+    <!-- modernizr js -->
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    <!-- jquery -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!-- owl carouserl js -->
+    <script src="js/owl.carousel.min.js"></script>
+    <!-- bootstrap js -->
+
+    <script src="js/bootstrap.min.js"></script>
+    <!-- wow js -->
+    <script src="js/wow.min.js"></script>
+    <!-- slider js -->
+    <script src="js/slider.js"></script>
+    <script src="js/jquery.fancybox.js"></script>
+    <!-- template main js -->
+    <script src="js/main.js"></script>
+    <link rel='stylesheet prefetch' href='https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.css'>
+    <link rel="stylesheet" href="css/style2.css">
+</head>
+
+<body>
+    <!--
+        ==================================================
+        Header Section Start
+        ================================================== -->
+
+
+    <header id="top-bar" class="navbar-fixed-top animated-header">
+        <div class="container">
+            <div class="navbar-header">
+                <!-- responsive nav button -->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                <!-- /responsive nav button -->
+
+                <!-- logo -->
+                <div class="navbar-brand">
+                    <a href="index.html">
+                        <img src="images/logo_2.png" alt="">
+                    </a>
+                </div>
+                <!-- /logo -->
+            </div>
+            <!-- main menu -->
+            <?
+                include("navi.php");
+            ?>
+                <!-- /main nav -->
+
+        </div>
+    </header>
+    <!--
+        ==================================================
+        Global Page Section Start
+        ================================================== -->
+    <section class="global-page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block">
+                        <h2>SHOP</h2>
+                        <ol class="breadcrumb">
+                            <li>
+                                <a href="index.html">
+                                    <i class="ion-ios-home"></i> Home
+                                </a>
+                            </li>
+                            <li class="active">Shop</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Map API-->
+   <section>
+        <div class="container">
+            <div class="section-heading">
+
+                <!--type-->
+                <div class="container">
+                  <br><br>
+
+                    <table class="table table-striped">
+
+                        <tr><br>
+                            <td width="100"><b><font color = "black">분류</font></b></td>
+                            <td><font color = "black"><label class="checkbox-inline"><input type="checkbox" class="chk-t" value="1">미니벨로</label></font></td>
+                            <td><font color = "black"><label class="checkbox-inline"><input type="checkbox" class="chk-t" value="2">전기자전거</label></font></td>
+                            <td><font color = "black"><label class="checkbox-inline"><input type="checkbox" class="chk-t" value="3">픽시</label></font></td>
+                            <td><font color = "black"><label class="checkbox-inline"><input type="checkbox" class="chk-t" value="4">하이브리드</label></font></td>
+                            <td><font color = "black"><label class="checkbox-inline"><input type="checkbox" class="chk-t" value="5">아동용</label></font></td>
+                            <td><font color = "black"><label class="checkbox-inline"><input type="checkbox" class="chk-t" value="6">로드</label></font></td>
+                            <td><font color = "black"><label class="checkbox-inline"><input type="checkbox" class="chk-t" value="7">전문 MTB</label></font></td>
+                        </tr>
+                        <tbody>
+                            <tr>
+                                <td><font color = "black"><b>가격(KRW)</font></b></td>
+                                <td><font color = "black"><label class="checkbox-inline"><input type="checkbox" class="chk-p" value="1">0~10,000</label></font></td>
+                                <td><font color = "black"><label class="checkbox-inline"><input type="checkbox" class="chk-p" value="2">10,000~15,000</label></font></td>
+                                <td><font color = "black"><label class="checkbox-inline"><input type="checkbox" class="chk-p" value="3">15,000~20,000</label></font></td>
+                                <td><font color = "black"><label class="checkbox-inline"><input type="checkbox" class="chk-p" value="4">20,000~25,000</label></font></td>
+                                <td><font color = "black"><label class="checkbox-inline"><input type="checkbox" class="chk-p" value="5">25,000~30,000</label></font></td>
+                                <td><font color = "black"><label class="checkbox-inline"><input type="checkbox" class="chk-p" value="6">30,000~35,000</label></font></td>
+                                <td><font color = "black"><label class="checkbox-inline"><input type="checkbox" class="chk-p" value="7">35,000+</label></font></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+    <!--/#Page header-->
+
+                <!--지도-->
+                <section id = "map">
+                 <div class="container">
+                    <div class="section-map">
+                    <div id="map" style="width:800px;height:400px;"></div>
+
+                    <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=19b74f09a6dd38ded1abcd0c1b01a5f6&libraries=services"></script>
+                    <script>
+
+                    var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+                    mapOption = {
+                      center: new daum.maps.LatLng(36.763717, 127.281891), // 지도의 중심좌표
+                      level:13 // 지도의 확대 레벨
+                    };
+
+                    var map = new daum.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+                    var type = [];
+                    var price = [];
+                    var lats = [];
+                    var lngs = [];
+                    var markers = [];
+                    var num = 0;
+					          refresh_list();
+                    $(".chk-t").on("click", function() {
+                      if (type.indexOf($(this).parent().text()) != -1) {
+                        type.splice(type.indexOf($(this).parent().text()), 1);
+            						removeMarker();
+            						refresh_list();
+                      }
+                      else{
+            						type.push($(this).parent().text());
+            						removeMarker();
+            						refresh_list();
+
+                      }
+
+                    });
+
+                    $(".chk-p").on("click", function() {
+
+                    if (price.indexOf($(this).parent().text()) != -1) {
+      						  price.splice(price.indexOf($(this).parent().text()), 1);
+      						  removeMarker();
+      						refresh_list();
+
+						}
+                      else {
+            						  price.push($(this).parent().text());
+            						  removeMarker();
+            						refresh_list();
+            						  }
+                       // console.log(price);
+                     // refresh_list();
+
+                    });
+
+
+                    function refresh_list() {
+
+                      $.ajax({
+                        url: "map.php",
+                        type: "POST",
+                        data: {
+                          t: type,
+                          p: price
+                        },
+
+                        success: function(data) {
+							num = 0;
+                          var content = JSON.parse(data);
+                          console.log(content);
+
+                          for (var i = 0; i < (content.length); i += 4) {
+
+                            lats[num] = content[i+2];
+                            lngs[num] = content[i+3];
+
+                            num++;
+                          }
+							refresh_map();
+                        },
+                        error: function() {
+                          swal("에러 발생!", "잠시후 다시 시도해 주세요.", "error");
+                        }
+                      });
+                    }
+
+                    // 지도 위에 표시되고 있는 마커를 모두 제거합니다
+                    function removeMarker() {
+						for (var i = 0; i < markers.length ; i ++) {
+							 markers[i].setMap(null);
+						}
+						makrers = [];
+
+                    }
+
+                    function refresh_map() {
+
+                      for (var i = 0; i < num ; i ++) {
+
+                        // 주소-좌표 변환 객체를 생성합니다
+
+                        var coords = new daum.maps.LatLng(lats[i], lngs[i]);
+                          //위치를 마커로 표시합니다
+                        var marker = new daum.maps.Marker({
+                         // map: map,
+                          position: coords
+                        });
+						marker.setMap(map);
+						markers.push(marker);
+                        map.setCenter(coords);
+                      }
+
+                    }
+
+                    $(document).ready(function() {
+                      $.ajax({
+                        url: "shop.php",
+                        type: "POST",
+                        data: {},
+                        success: function(data) {
+                        },
+                        error: function() {
+                          swal("에러 발생!", "잠시후 다시 시도해 주세요.", "error");
+                        }
+                      });
+
+
+                      var type = [];
+                      var price = [];
+                      $(".chk-t").on("click", function() {
+
+                          if (type.indexOf($(this).parent().text()) != -1) type.splice(type.indexOf($(this).parent().text()), 1);
+                          else type.push($(this).parent().text());
+                          console.log(type);
+                          refresh();
+                      });
+                      $(".chk-p").on("click", function() {
+                          if (price.indexOf($(this).parent().text()) != -1) price.splice(price.indexOf($(this).parent().text()), 1);
+                          else price.push($(this).parent().text());
+                          console.log(price);
+                          refresh();
+                      });
+
+                      function refresh() {
+                          $.ajax({
+                              url: "shop.php",
+                              type: "POST",
+                              data: {
+                                  t: type,
+                                  p: price
+                              },
+                              success: function(data) {
+                                  var content = JSON.parse(data);
+                                  console.log(content);
+                                  $(".goods-container").html("");
+                                  for (var i = 0; i < (content.length); i += 4) {
+                                      $(".goods-container").append(
+                                          '<div class="col-sm-4 col-xs-12" style="padding:15px">\
+                                        <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">\
+                                            <div class="img-wrapper">\
+                                                <img src="' +
+                                          content[i + 3] +
+                                          '" class="img-responsive" alt="this is a title">\
+                                                <div class="overlay">\
+                                                    <div class="buttons">\
+                                                        <a rel="gallery" class="fancybox" href="' +
+                                          content[i + 3] + '">Demo</a>\
+                                                        <a target="_blank" href="single-portfolio.html?item=' + content[i] +
+                                          '">Details</a>\
+                                                    </div>\
+                                                </div>\
+                                            </div>\
+                                            <figcaption>\
+                                                <h4>\
+                                                    <a href="single-portfolio.html?item=' +
+                                          content[i] + '">\
+                                                        ' + content[i + 1] +
+                                          '\
+                                                    </a>\
+                                                </h4>\
+                                                <p>\
+                                                   ' +
+                                          content[i + 2] +
+                                          '\
+                                                </p>\
+                                            </figcaption>\
+                                        </figure>\
+                                    </div>');
+                                  }
+                              },
+                              error: function() {
+                                  swal("에러 발생!", "잠시후 다시 시도해 주세요.", "error");
+                              }
+                          });
+                      }
+
+                      // 자전거 검색 쿼리
+                      $(document).ready(function() {
+                          $.ajax({
+                              url: "shop.php",
+                              type: "POST",
+                              data: {},
+                              success: function(data) {
+                                  var content = JSON.parse(data);
+                                  for (var i = 0; i < (content.length); i += 4) {
+                                      $(".goods-container").append(
+                                          '<div class="col-sm-4 col-xs-12" style="padding:15px">\
+                                          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">\
+                                              <div class="img-wrapper">\
+                                                  <img src="' +
+                                          content[i + 3] +
+                                          '" class="img-responsive" alt="this is a title">\
+                                                  <div class="overlay">\
+                                                      <div class="buttons">\
+                                                          <a rel="gallery" class="fancybox" href="' +
+                                          content[i + 3] + '">Demo</a>\
+                                                          <a target="_blank" href="single-portfolio.html?item=' + content[i] +
+                                          '">Details</a>\
+                                                      </div>\
+                                                  </div>\
+                                              </div>\
+                                              <figcaption>\
+                                                  <h4>\
+                                                      <a href="single-portfolio.html?item=' +
+                                          content[i] + '">\
+                                                          ' + content[i + 1] +
+                                          '\
+                                                      </a>\
+                                                  </h4>\
+                                                  <p>\
+                                                     ' +
+                                          content[i + 2] +
+                                          '\
+                                                  </p>\
+                                              </figcaption>\
+                                          </figure>\
+                                      </div>'
+                                      );
+                                  }
+                              },
+                              error: function() {
+                                  swal("에러 발생!", "잠시후 다시 시도해 주세요.", "error");
+                              }
+                          });
+                      });
+
+                    });
+                    </script>
+                    </div>
+                 </div>
+                </section>
+            </div>
+          </div>
+          </section>
+
+    <section id="works">
+        <div class="container">
+            <div class="row goods-container">
+            </div>
+
+            <!--상품 목록-->
+               <script>
+
+
+            </script>
+        </div>
+    </section>
+    <?
+          include("footer.php")
+    ?>
+</body>
+
+</html>
+
+</html>

@@ -1,0 +1,27 @@
+.item-desc {
+    font-size: 20px;
+    line-height: 1.3em;
+}
+
+.btn-fav {
+    border: 2px solid rgb(226, 204, 61);
+    background-color: rgb(255, 214, 0);
+    height: 60px;
+    cursor: pointer;
+}
+
+.btn-fav:hover {
+    opacity: 0.8;
+}
+
+#map {
+    height: 400px;
+    width: 600px;
+    margin: 0 auto;
+}
+
+hr.two {
+    width: 600px;
+    align: center;
+    border: thin solid lightgray;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>Meanincle Chatting Service</title>
+<meta charset="utf-8">
+<script type="text/javascript" src="chat.js"></script>
+<link rel="stylesheet" type="text/css" href="chat.css" />
+<script language="javascript">
+//--  Input Box에 기본값을 마우스 클릭시 초기화
+var clearChk=true;
+
+// 마우스가 클릭되었을때 초기 메시지를 클리어
+function clearMessage(frm){
+
+  if(clearChk){
+    frm.name.value="";
+    clearChk=false;
+  }
+
+}
+
+var clearChk2=true;
+
+// 마우스가 클릭되었을때 초기 메시지를 클리어
+function clearMessage2(frm){
+
+  if(clearChk2){
+    frm.msg.value="";
+    clearChk2=false;
+  }
+
+}
+</script>
+</head>
+
+<body>
+<dl id="list"></dl>
+<form onsubmit="chatManager.write(this); return false;">
+
+	<input name="name" id="name" type="text" value="아이디 입력" onFocus="clearMessage(this.form);">
+	<input name="msg" id="msg" type="text" value="전달하고 싶은 메시지를 입력해보세요!" onFocus="clearMessage2(this.form);">
+	<input name="btn" id="btn" type="submit" value="전송" onFocus="clearMessage(this.form);"/>
+
+</form>
+
+
+</head>
+</html>

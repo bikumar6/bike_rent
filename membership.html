@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<?
+INCLUDE("db/dbconnect.php");
+$query = "select * from bicycle order by idx DESC limit 6";
+$result = mysqli_query($conn,$query);
+require_once("login.html");
+?>
+
+<html class="no-js">
+<head>
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <title>환영합니다. Meaningcle 입니다.</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <!-- Mobile Specific Metas
+    ================================================== -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Template CSS Files
+    ================================================== -->
+    <!-- Twitter Bootstrs CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Ionicons Fonts Css -->
+    <link rel="stylesheet" href="css/ionicons.miFn.css">
+    <!-- animate css -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- Hero area slider css-->
+    <link rel="stylesheet" href="css/slider.css">
+    <!-- owl craousel css -->
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.theme.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.css">
+    <!-- template main css file -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Template Javascript Files
+    ================================================== -->
+    <!-- modernizr js -->
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    <!-- jquery -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!-- owl carouserl js -->
+    <script src="js/owl.carousel.min.js"></script>
+    <!-- bootstrap js -->
+
+    <script src="js/bootstrap.min.js"></script>
+    <!-- wow js -->
+    <script src="js/wow.min.js"></script>
+    <!-- slider js -->
+    <script src="js/slider.js"></script>
+    <script src="js/jquery.fancybox.js"></script>
+    <!-- template main js -->
+    <script src="js/main.js"></script>
+    <script src="http://s.codepen.io/assets/libs/modernizr.js" type="text/javascript"></script>
+    <link rel='stylesheet prefetch' href='https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.css'>
+    <link rel="stylesheet" href="css/style2.css">
+
+    <script type="text/javascript" src="/js/jquery-1.4.2.min.js"></script>
+
+    <style>
+    #quick {
+    position: absolute;
+    right: 0;
+    top: 100px;
+    height: 200px;
+    z-index: 2;
+  }
+</style>
+</head>
+
+<body>
+  <!-- quick view-->
+  <div id="quick">
+    <img src="quickview.jpg" width=50% usemap="#maprec">
+    <map name = "maprec">
+      <area shape = "rect" coords="3,3,47,47" href="mypage.html">
+      <area shape = "rect" coords="3,60,47,107" href="basket.html">
+    </map>
+  </div>
+  <!-- /quick view-->
+    <!--
+    ==================================================
+    Header Section Start
+    ================================================== -->
+
+    <header id="top-bar" class="navbar-fixed-top animated-header">
+
+      <!-- quick view-->
+
+      <!-- /quick view-->
+
+        <div class="container">
+            <div class="navbar-header">
+                <!-- responsive nav button -->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- /responsive nav button -->
+                <!-- logo -->
+                <div class="navbar-brand">
+                    <a href="index.html">
+                        <img src="images/logo_2.png" alt="">
+                    </a>
+                </div>
+
+
+                <!-- /logo -->
+            </div>
+            <!-- main menu -->
+            <div class="main-menu">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="index.html" >Home</a>
+                    </li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="post.html">Post</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="./survey/survey.php">Survey</a></li>
+                    <li><a href="index.html" onclick="logout.php">Logout</a></li>
+                </ul>
+            </div>
+            <!-- /main nav -->
+        </div>
+
+    </header>
+
+    <!--<div id="cp_widget_085b9ec8-46d9-4895-b066-27aa1daff440">...</div>
+    <script type="text/javascript">
+        var cpo = []; cpo["_object"] = "cp_widget_085b9ec8-46d9-4895-b066-27aa1daff440"; cpo["_fid"] = "AcAAZ8N-Cqaf";
+        var _cpmp = _cpmp || []; _cpmp.push(cpo);
+        (function () {
+            var cp = document.createElement("script"); cp.type = "text/javascript";
+            cp.async = true; cp.src = "//www.cincopa.com/media-platform/runtime/libasync.js";
+            var c = document.getElementsByTagName("script")[0];
+            c.parentNode.insertBefore(cp, c);
+        })(); </script><noscript><span>New Gallery 2017/5/14</span></noscript>-->
+    <!--
+    ==================================================
+    Slider Section Start
+    ================================================== -->
+    <section id="hero-area" >
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div class="block wow fadeInUp" data-wow-delay=".3s">
+
+                        <!-- Slider -->
+                        <section class="cd-intro">
+                            <h1 class="wow fadeInUp animated cd-headline slide" data-wow-delay=".4s">
+                                <span>Welcome to Meaningcle !</span><br>
+                                <span class="cd-words-wrapper">
+                                    <b class="is-visible">BICYCLE</b>
+                                    <b>SHARING</b>
+                                    <b>RENTING</b>
+                                </span>
+                            </h1>
+                        </section> <!-- cd-intro -->
+                        <!-- /.slider -->
+                        <h2 class="wow fadeInUp animated" data-wow-delay=".6s">
+                            자전거 렌트 사이트 Meaningcle 에 오신걸 환영합니다. <br> 저희 Meaningcle 에서는 자전거 렌트 및 정보 공유를 목표로 하고 있습니다.
+                        </h2>
+                        <a class="btn-lines dark light wow fadeInUp animated smooth-scroll btn btn-default btn-green" data-wow-delay=".9s" href="#works" data-section="#works">View Works</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!--/#main-slider-->
+    <!--
+    ==================================================
+    Slider Section Start
+    ================================================== -->
+    <section id="about">
+        <div class="container">
+
+            <div class="row" align ="center">
+
+                <h1 class="title wow fadeInDown" data-wow-delay=".3s">N E W &nbsp; A R R I V A L S</h1><br><br>
+                    <img src="images/bicycle/자전거1.jpg">
+                    <img src="images/bicycle/자전거5.jpg">
+                    <img src="images/bicycle/자전거6.jpg">
+            </div>
+        </div>
+    </section>
+  <!--
+    ==================================================
+    Portfolio Section Start
+    ================================================== -->
+    <section id="works" class="works">
+        <div class="container">
+            <div class="section-heading">
+                <h1 class="title wow fadeInDown" data-wow-delay=".3s">N E W &nbsp; B Y C Y C L E</h1>
+
+            </div>
+            <div class="row">
+              <?
+                while($row=mysqli_fetch_array($result)){
+              ?>
+                <div class="col-sm-4 col-xs-12" style="padding:15px">
+                    <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
+                        <div class="img-wrapper">
+                            <img src="<?=$row['route']?>" class="img-responsive" alt="this is a title">
+                            <div class="overlay">
+                                <div class="buttons">
+                                    <a rel="gallery" class="fancybox" href="<?=$row['route']?>">Demo</a>
+                                    <a target="_blank" href="single-portfolio.html?item=<?=$row['idx']?>">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <figcaption>
+                            <h4>
+                                <a href="#">
+                                    <?=$row['model']?>
+                                </a>
+                            </h4>
+                            <p>
+                                <?=$row['rental_fee']?>
+                            </p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <?
+                  }
+                ?>
+            </div>
+        </div>
+    </section> <!-- #works -->
+    <br><br><br><br>
+
+    <?
+    include("footer.php");
+    ?>
+
+</body>
+</html>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+<script type="text/javascript">
+
+$(function() {
+
+ var UI = {
+   init: function() {
+     this.quickMenuFn();
+     this.topBtn();
+   },
+
+   initialize: function() {
+     this.id = {
+       target: {
+         quick: '#quick',
+         stickyTop: '#footer'
+       },
+       topBtnClass: 'btn_top'
+     };
+     this.init();
+   },
+
+   quickMenuFn: function() {
+     var quick = $(this.id.target.quick);
+     var qTop = parseInt(quick.css('top'));
+
+     $(window).scroll(function() {
+       var winTop = $(window).scrollTop();
+
+       quick.stop().animate({
+         top: winTop + qTop
+       }, 400);
+
+     })
+   },
+
+   topBtn: function() {
+     var btnLocation = $('.' + this.id.topBtnClass);
+     var timerId = 0;
+
+     $(window).on('scroll', function() {
+       var winTop = $(window).scrollTop();
+       if (winTop > 200) {
+         btnLocation.fadeIn();
+         clearInterval(timerId);
+         timerId = setInterval(btnEffet, 2000);
+       } else {
+         btnLocation.fadeOut();
+         clearInterval(timerId);
+       }
+
+     });
+
+     function btnEffet() {
+       btnLocation.fadeTo('300', 0.3).fadeTo('300', 1);
+     }
+
+     this.scrollTop(btnLocation);
+   },
+
+   scrollTop: function(eTarget, speed) {
+     var speed = speed || null;
+     eTarget.on('click', function() {
+       $('html, body').animate({
+         scrollTop: $("body").offset().top
+       }, speed)
+     })
+   }
+
+ };
+
+ $(function() {
+   UI.initialize();
+ })
+
+})
+ </script>

@@ -1,0 +1,136 @@
+<html>
+<head>
+  <style>
+  #quick {
+  position: absolute;
+  right: 0;
+  top: 100px;
+  height: 200px;
+  z-index: 2;
+}
+
+#footer {
+  background: black;
+  opacity: .5;
+  color: #fff;
+  height: 40px;
+  margin-top: 0;
+}
+
+#sample_page {
+  margin-top: 0
+}
+
+.po {
+  border: 1px solid blue;
+  position: relative;
+}
+
+.por {
+  position: relative;
+}
+
+.btn_top {
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  width: 50px;
+  height: 50px;
+  background: #555;
+  color: #fff;
+  line-height: 50px;
+  display: none
+}
+
+.btn_top a {
+  color: #fff;
+  display: block;
+  text-align: center;
+  font-size: 20px;
+}
+  </style>
+</head>
+<body>
+    <div id="quick">
+      <img src="quickview.jpg" width="50">
+    </div>
+</body>
+</html>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+<script type="text/javascript">
+
+$(function() {
+
+ var UI = {
+   init: function() {
+     this.quickMenuFn();
+     this.topBtn();
+   },
+
+   initialize: function() {
+     this.id = {
+       target: {
+         quick: '#quick',
+         stickyTop: '#footer'
+       },
+       topBtnClass: 'btn_top'
+     };
+     this.init();
+   },
+
+   quickMenuFn: function() {
+     var quick = $(this.id.target.quick);
+     var qTop = parseInt(quick.css('top'));
+
+     $(window).scroll(function() {
+       var winTop = $(window).scrollTop();
+
+       quick.stop().animate({
+         top: winTop + qTop
+       }, 400);
+
+     })
+   },
+
+   topBtn: function() {
+     var btnLocation = $('.' + this.id.topBtnClass);
+     var timerId = 0;
+
+     $(window).on('scroll', function() {
+       var winTop = $(window).scrollTop();
+       if (winTop > 200) {
+         btnLocation.fadeIn();
+         clearInterval(timerId);
+         timerId = setInterval(btnEffet, 5000);
+       } else {
+         btnLocation.fadeOut();
+         clearInterval(timerId);
+       }
+
+     });
+
+     function btnEffet() {
+       btnLocation.fadeTo('300', 0.3).fadeTo('300', 1);
+     }
+
+     this.scrollTop(btnLocation);
+   },
+
+   scrollTop: function(eTarget, speed) {
+     var speed = speed || null;
+     eTarget.on('click', function() {
+       $('html, body').animate({
+         scrollTop: $("body").offset().top
+       }, speed)
+     })
+   }
+
+ };
+
+ $(function() {
+   UI.initialize();
+ })
+
+})
+ </script>

@@ -1,0 +1,238 @@
+<?
+require_once("login.html");
+?>
+<html>
+<head>
+  <!-- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8">
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <link rel="icon" type="image/png" href="images/favicon.png">
+   <title>환영합니다. Meaningcle 입니다.</title>
+   <meta name="description" content="">
+   <meta name="keywords" content="">
+   <meta name="author" content="">
+   <!-- Mobile Specific Metas
+   ================================================== -->
+   <meta name="format-detection" content="telephone=no">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <!-- Template CSS Files
+   ================================================== -->
+   <!-- Twitter Bootstrs CSS -->
+   <link rel="stylesheet" href="css/bootstrap.min.css">
+   <!-- Ionicons Fonts Css -->
+   <link rel="stylesheet" href="css/ionicons.min.css">
+   <!-- animate css -->
+   <link rel="stylesheet" href="css/animate.css">
+   <!-- Hero area slider css-->
+   <link rel="stylesheet" href="css/slider.css">
+   <!-- owl craousel css -->
+   <link rel="stylesheet" href="css/owl.carousel.css">
+   <link rel="stylesheet" href="css/owl.theme.css">
+   <link rel="stylesheet" href="css/jquery.fancybox.css">
+   <!-- template main css file -->
+   <link rel="stylesheet" href="css/main.css">
+   <!-- responsive css -->
+   <link rel="stylesheet" href="css/responsive.css">
+
+   <!-- Template Javascript Files
+   ================================================== -->
+   <!-- modernizr js -->
+   <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+   <!-- jquery -->
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+   <!-- owl carouserl js -->
+   <script src="js/owl.carousel.min.js"></script>
+   <!-- bootstrap js -->
+
+   <script src="js/bootstrap.min.js"></script>
+   <!-- wow js -->
+   <script src="js/wow.min.js"></script>
+   <!-- slider js -->
+   <script src="js/slider.js"></script>
+   <script src="js/jquery.fancybox.js"></script>
+   <!-- template main js -->
+   <script src="js/main.js"></script>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+  <!--
+    ==================================================
+    Header Section Start
+    ================================================== -->
+    <header id="top-bar" class="navbar-fixed-top animated-header">
+        <div class="container">
+            <div class="navbar-header">
+                <!-- responsive nav button -->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- /responsive nav button -->
+                <!-- logo -->
+                <div class="navbar-brand">
+                    <a href="index.html">
+                        <img src="images/logo_2.png" alt="">
+                    </a>
+                </div>
+                <!-- /logo -->
+            </div>
+            <!-- main menu -->
+            <?
+            include("navi.php");
+            ?>
+            <!-- /main nav -->
+        </div>
+    </header>
+
+    <!--
+    ==================================================
+        Global Page Section Start
+    ================================================== -->
+    <section class="global-page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block">
+                        <h2>shopping basket</h2>
+                        <ol class="breadcrumb">
+                            <li>
+                                <a href="index.html">
+                                    <i class="ion-ios-home"></i>
+                                    Home
+                                </a>
+                            </li>
+                            <li class="active">Shopping Basket</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!--/#page-header-->
+    <br>
+    <br>
+    <br>
+    <br>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-10 col-md-offset-1">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>제품명</th>
+                        <th>수량</th>
+                        <th class="text-center">렌트비</th>
+                        <th class="text-center">총 렌트비</th>
+                        <th> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <?
+                    require_once('db/dbconnect.php');
+
+                    $query = "select * from basket where user='".$_SESSION['login_user']."'";
+                    $result = mysqli_query($conn, $query);
+                    $price=0;
+                    while($row = mysqli_fetch_array($result)){
+                      $iquery = "select * from bicycle where idx='".$row['item']."'";
+                      $iresult = mysqli_query($conn, $iquery);
+                      $irow = mysqli_fetch_array($iresult);
+                      $price+=$irow['rental_fee'];
+                  ?>
+                    <tr>
+                        <td class="col-sm-8 col-md-6">
+                        <div class="media">
+                            <a class="thumbnail pull-left" href="#"> <img class="media-object" src="<?=$irow['route']?>" style="width: 72px; height: 72px;"> </a>
+                            <div class="media-body">
+                                <h4 class="media-heading"><a href="#"><?=$irow['model']?></a></h4>
+                                <h5 class="media-heading"><a href="#"><?=$irow['type']?></a></h5>
+                            </div>
+                        </div></td>
+                        <td class="col-sm-1 col-md-1" style="text-align: center">
+                        <input type="email" class="form-control" id="exampleInputEmail1" value="1" disabled="disabled">
+                        </td>
+                        <td class="col-sm-1 col-md-1 text-center"><strong><?=number_format($irow['rental_fee'])?></strong></td>
+                        <td class="col-sm-1 col-md-1 text-center"><strong><?=number_format($irow['rental_fee'])?></strong></td>
+                        <td class="col-sm-1 col-md-1">
+                        <button type="button" class="btn btn-danger btn-remove" onclick="remove(<?=$row['idx']?>)">
+                            <span class="glyphicon glyphicon-remove"></span> 삭제
+                        </button></td>
+                    </tr>
+                    <?}?>
+                    <script>
+                    function click_button()
+                  {
+
+                       window.open("chatmain.html" , "설문조사",
+                            "top=100,left=500,width=430,height=600, status=no, scrollbars=no");
+                  }
+                    function remove(param){
+                      swal({
+                        title: "정말로 삭제 하시겠습니까?",
+                        text: "한번 삭제된 항목은 복구할 수 없습니다",
+                        type: "warning",
+                        showCancelButton: true,
+                        confirmButtonColor: "#DD6B55",
+                        confirmButtonText: "삭제하기",
+                        cancelButtonText: "취소하기",
+                        closeOnConfirm: false
+                      },
+                      function(){
+                        $.ajax({
+                          url: "add.php",
+                          type: "POST",
+                          data: {
+                            idx: param
+                          },
+
+                          success: function(data) {
+
+                            swal({
+                              title: "삭제 성공!",
+                              text: "선택한 물품을 성공적으로 삭제하였습니다.",
+                              type: "success",
+                              confirmButtonColor: "#DD6B55",
+                              confirmButtonText: "확인",
+                              },
+                              function(){
+                                location.reload();
+                              });
+                          },
+                          error: function() {
+                            swal("에러 발생!", "잠시후 다시 시도해 주세요.", "error");
+                          }
+                        });
+                      });
+                    }
+                    </script>
+                    <tr>
+                        <td>   </td>
+                        <td>   </td>
+                        <td>   </td>
+                        <td><h3>합계</h3></td>
+                        <td class="text-right"><h3><strong><?=number_format($price)?></strong></h3></td>
+                    </tr>
+                    <tr>
+                        <td>   </td>
+                        <td>   </td>
+                        <td>   </td>
+                        <td>
+                        <button type="button" class="btn btn-default" onclick="location.href='shop.html'">
+                            <span class="glyphicon glyphicon-shopping-cart"></span> 쇼핑 계속하기
+                        </button></td>
+                        <td>
+                        <button type="button" class="btn btn-success" onclick="click_button()">
+                            렌트 신청 <span class="glyphicon glyphicon-play"></span>
+                        </button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <br><br><br>
+        </div>
+    </div>
+</div>
+</body>
+</html>
